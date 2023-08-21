@@ -1,4 +1,4 @@
-#url routing in a single ways
+ting in a single ways
 
 #                                       URL ROUTING 
 @app.route("/home")
@@ -71,3 +71,65 @@ def user(name):
 
 #used for data communication
 #GET #HEAD #POST #PUT #DELETE
+
+
+
+
+
+
+
+
+#                       FLASK TEMPLATES
+
+
+#  functions that contains view functions
+#                   i.e the message()   which is associated with the URL '/'.
+#                    before we were getting just the string but now it will return a message with <h1> tag attached to it using html
+
+#                       files that is present in this Flask templates are 
+#                           script.py but we are writing it just in this file
+#
+# using view function which is hard coding
+from flask import Flask 
+app=Flask(__name__)
+@app.route('/)
+def message():
+    return "
+    <html><body><h1>Hi, welcome to our website</h1></body></html>"
+    if __name__=='__main__':
+        app.run(debug=True)
+        
+#output is Hi, welcome to our website 
+
+
+
+
+#                       RENDERING EXTERNAL HTML FILES
+
+#        here we are using jinja2 template engine   so flask is based on jinja2 template engine
+
+#          Flask provides us the render_template() function which can be used to render the external HTML file to 
+#be returned as the responese from the view function         
+#   Here we will be creating two fiels one is message.html file and the other one is script.py 
+
+#check it in code section on github
+#           Note the most important things that we need to do while rendering is that you need to keep that message.html file in folder named templates in your main folder direcctory
+
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
