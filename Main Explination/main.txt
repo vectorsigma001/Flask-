@@ -1,0 +1,73 @@
+#url routing in a single ways
+
+#                                       URL ROUTING 
+@app.route("/home")
+def check():
+    return "This is a first way of showing home page using url routing"
+#second way 
+def home():
+    return "This is the home page"
+def about():
+    return "about section"
+def services():
+    return "Services"
+def shop():
+    return "Shop section"
+    
+app.add_url_rule("/home","home",home)
+app.add_url_rule("/about","about",about)
+app.add_url_rule("/services","services",services)
+app.add_url_rule("/shop","shop",shop)
+
+
+
+#                                           URL BINDING     
+@app.route('/home')
+def home():
+    return "Home page"
+@app.route('/about')
+def about():
+    return "About section"
+@app.route('/services')
+def services():
+    return "Services section"
+@app.route('/shop')
+def shop():
+    return "Shop section"
+@app.route('/user/<name>')
+def user(name):
+    if name=='home':
+        return redirect(url_for('home'))
+    elif name=='about':
+        return redirect(url_for('about'))
+    elif name=='services':
+        return redirect(url_for('services'))
+    elif name=='shop':
+        return redirect(url_for('shop'))
+        
+#benefits of using url binding is that, it makes it easier for you to handle the url 
+
+
+
+
+
+
+
+#                           FLASK HTTP METHODS
+#For this section check the another file 
+#by default we will be using the GET() method 
+
+#Questions
+#First two method of login.html post_example.py is related to post request
+#now the method goes to login1.html and get_example.py
+        #the data send using the get() method is retrived on the development server
+        #the data here is obtained by using the following line of code
+        #   uname=request.args.get('uname')
+        #   here the args is a dictonary object which containes the list of pairs of form parameter and its corresponding value.
+        
+
+
+
+
+#used for data communication
+#GET #HEAD #POST #PUT #DELETE
